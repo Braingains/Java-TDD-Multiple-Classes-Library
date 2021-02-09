@@ -18,4 +18,9 @@ public class Borrower {
     public int getLoanedBooks() {
         return this.loanedBooks.size();
     }
+
+    public void loanBookFromLibrary(Library library) {
+        Book book = library.loanOutBook();
+        this.loanedBooks.add(book);
+    }
 }

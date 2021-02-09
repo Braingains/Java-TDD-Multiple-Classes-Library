@@ -33,6 +33,13 @@ public class LibraryTest {
     }
 
     @Test
+    public void libraryCanHaveBooksRemoved() {
+        library.addBookToCollection(book);
+        library.loanOutBook();
+        assertEquals(0, library.collectionCount());
+    }
+
+    @Test
     public void cannotAddBeyondCapacity() {
         tinyLibrary.addBookToCollection(book);
         tinyLibrary.addBookToCollection(book);

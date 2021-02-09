@@ -6,9 +6,16 @@ import static org.junit.Assert.assertEquals;
 public class BorrowerTest {
 
     private Borrower borrower;
+    private Book book;
+    private Library library;
 
     @Before
-    public void before() {borrower = new Borrower("Winston Smith"); }
+    public void before() {
+        borrower = new Borrower("Winston Smith");
+        book = new Book("1984", "George Orwell", "Non-Fiction");
+        library = new Library(100);
+    }
+
 
     @Test
     public void hasName(){
@@ -18,5 +25,12 @@ public class BorrowerTest {
     @Test
     public void hasCollectionOfLoanedBooks() {
         assertEquals(0, borrower.getLoanedBooks());
+    }
+
+    @Test
+    public void canBorrowFromLibrary() {
+        borrower.loanBookFromLibrary(library);
+        assertEquals(1, borrower.getLoanedBooks());
+
     }
 }

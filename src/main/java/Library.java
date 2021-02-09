@@ -26,4 +26,8 @@ public class Library {
         }
         return false;
     }
+
+    public Book loanOutBook() {
+        return this.collection.remove(0);
+    }
 }
