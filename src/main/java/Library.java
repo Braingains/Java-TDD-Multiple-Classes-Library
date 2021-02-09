@@ -1,14 +1,17 @@
 import javax.lang.model.type.ArrayType;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
     private ArrayList<Book> collection;
     private int capacity;
+    public HashMap<String, Integer> genreCollection = new HashMap<String, Integer>();
 
     public Library(int capacity) {
         this.collection = new ArrayList<>();
         this.capacity = capacity;
+        this.genreCollection = new HashMap<String, Integer>(); 
     }
 
     public int getCapacity() {
@@ -29,5 +32,13 @@ public class Library {
 
     public Book loanOutBook() {
         return this.collection.remove(0);
+    }
+
+    public void addBookToGenreCollection(Book book) {
+        this.genreCollection.merge(book.getGenre(), 1, Integer::sum);
+    }
+
+    public int genreCollectionCount() {
+        return this.genreCollection.size();
     }
 }

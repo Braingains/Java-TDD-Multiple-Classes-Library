@@ -47,4 +47,10 @@ public class LibraryTest {
 
     }
 
+    @Test
+    public void canAddToGenreCollection() {
+        library.addBookToGenreCollection(book);
+        assertEquals(1, library.genreCollectionCount());
+    }
+
 }
