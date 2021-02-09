@@ -24,9 +24,9 @@ public class LibraryTest {
         assertEquals(0, library.collectionCount());
     }
 
-//    @Test
-//    public void libraryCanHaveBooksAdded() {
-//        library.addBookToCollection(book);
-//        assertEquals(1, library.collection.add);
-//    }
+    @Test
+    public void libraryCanHaveBooksAdded() {
+        library.addBookToCollection(book);
+        assertEquals(1, library.collectionCount());
+    }
 }
