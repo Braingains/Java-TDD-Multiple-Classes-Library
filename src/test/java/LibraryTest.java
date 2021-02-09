@@ -39,5 +39,5 @@ public class LibraryTest {
         assertEquals(false, tinyLibrary.addBookToCollection(book));
 
     }
-    
+
 }
