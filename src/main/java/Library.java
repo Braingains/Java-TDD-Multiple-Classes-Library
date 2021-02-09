@@ -6,7 +6,7 @@ public class Library {
     private ArrayList<Book> collection;
     private int capacity;
 
-    public Library(int capacity){
+    public Library(int capacity) {
         this.collection = new ArrayList<>();
         this.capacity = capacity;
     }
@@ -19,7 +19,11 @@ public class Library {
         return this.collection.size();
     }
 
-    public void addBookToCollection(Book book) {
-        this.collection.add(book);
+    public boolean addBookToCollection(Book book) {
+        if (this.collectionCount() < this.capacity) {
+            this.collection.add(book);
+            return true;
+        }
+        return false;
     }
 }
