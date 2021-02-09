@@ -53,4 +53,11 @@ public class LibraryTest {
         assertEquals(1, library.genreCollectionCount());
     }
 
+    @Test
+    public void genreCollectionValueIncreases() {
+        library.addBookToGenreCollection(book);
+        library.addBookToGenreCollection(book);
+        assertEquals(2, library.countBooksByGenre("Non-Fiction"));
+    }
+
 }

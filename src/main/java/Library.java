@@ -1,6 +1,7 @@
 import javax.lang.model.type.ArrayType;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Library {
 
@@ -11,7 +12,7 @@ public class Library {
     public Library(int capacity) {
         this.collection = new ArrayList<>();
         this.capacity = capacity;
-        this.genreCollection = new HashMap<String, Integer>(); 
+        this.genreCollection = new HashMap<String, Integer>();
     }
 
     public int getCapacity() {
@@ -41,4 +42,9 @@ public class Library {
     public int genreCollectionCount() {
         return this.genreCollection.size();
     }
+
+    public int countBooksByGenre(String genre) {
+        return this.genreCollection.get(genre);
+    }
 }
+
